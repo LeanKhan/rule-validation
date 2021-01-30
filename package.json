@@ -1,7 +1,7 @@
 {
-  "name": "node-rules-validation",
+  "name": "rule-validation-api",
   "version": "0.0.1",
-  "description": "Rules Validation",
+  "description": "Rule Validation API in Nodejs",
   "main": "src/server.ts",
   "scripts": {
     "build": "tsc",
@@ -26,7 +26,7 @@
     "node",
     "express"
   ],
-  "author": "LeanKhan",
+  "author": "Emmanuel Segun-Lean (@LeanKhan)",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",

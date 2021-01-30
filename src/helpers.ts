@@ -36,7 +36,7 @@ export function getMessage(type: MessageType, input?: string): string {
   }
 }
 
-export function testJSON(text) {
+export function testJSON(text): boolean {
   if (typeof text == 'object') {
     return true;
   }
@@ -54,8 +54,7 @@ export function testJSON(text) {
 }
 
 export function isValidJSON(req, res, next) {
-  if (!req.body)
-    return respond.fail(res, 400, 'json', { message: 'Request body is required.', status: 'error', data: null });
+  if (!req.body) return respond.fail(res, 400, 'json', { message: 'body is required.', status: 'error', data: null });
   if (testJSON(req.body)) {
     return next();
   } else {
@@ -63,7 +62,7 @@ export function isValidJSON(req, res, next) {
   }
 }
 
-export function dataType(data: any) {
+export function dataType(data: any): string {
   if (typeof data == 'string') {
     return 'string';
   } else if (Array.isArray(data)) {
@@ -104,8 +103,6 @@ function evaluate(
   } else {
     switch (condition) {
       case 'eq':
-        // if (typeof value != 'number' && typeof condition_value != 'number')
-        //   throw new Error(`${value} and ${condition_value} must both be numbers for condition ${condition}.`);
         result = value === condition_value;
         break;
       case 'gt':
@@ -180,8 +177,6 @@ export function handleObject(
   if (field && !data[field]) throw new Error(getMessage('missing_field', field));
 
   return evaluate(data[field], condition, condition_value, field, 'object');
-
-  // TODO: add type checks! SO that we don't do stupid things :)
 }
 
 export function handleArray(

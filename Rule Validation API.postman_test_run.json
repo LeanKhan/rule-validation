@@ -1,0 +1,1020 @@
+{
+	"id": "511315e8-a226-4402-828e-accd21d3e056",
+	"name": "Rule Validation API",
+	"allTests": [],
+	"timestamp": "2021-01-30T17:35:54.029Z",
+	"collection_id": "3b6a2b7d-0da8-4867-93bd-3d006ae9e18f",
+	"folder_id": 0,
+	"target_type": "collection",
+	"environment_id": "068bd57d-a6d5-4097-9034-1136383f2ac0",
+	"data": [],
+	"delay": 0,
+	"count": 1,
+	"collection": {
+		"id": "3b6a2b7d-0da8-4867-93bd-3d006ae9e18f",
+		"name": "Rule Validation API",
+		"description": "Used to validate rules. By Emmanuel Segun-Lean. [@LeanKhan](https://github.com/LeanKhan) [email](mailto:eslean20@gmail.com) (for flwave nodejs assessment)",
+		"auth": null,
+		"events": [
+			{
+				"listen": "prerequest",
+				"script": {
+					"id": "785c5f71-c0db-4c2f-b708-14e3424ee84c",
+					"type": "text/javascript",
+					"exec": [
+						""
+					]
+				}
+			},
+			{
+				"listen": "test",
+				"script": {
+					"id": "a9346795-31e4-453a-abad-68e3373c743b",
+					"type": "text/javascript",
+					"exec": [
+						"pm.test(\"It should have message property\", function() {",
+						" \t var jsonData = pm.response.json(); ",
+						"\t return pm.expect(jsonData.message).to.exist.and.to.be.a('string');",
+						"});",
+						"",
+						"pm.test(\"It should have status property\", function() {",
+						" \t var jsonData = pm.response.json(); ",
+						"\t return pm.expect(jsonData.status).to.exist.and.to.be.a('string').and.to.be.oneOf([\"success\", \"error\"]); ",
+						"});",
+						"",
+						"pm.test(\"It should have data property\", function() {",
+						" \t var jsonData = pm.response.json(); ",
+						"\t return pm.expect(jsonData.data).to.not.be.undefined; ",
+						"});"
+					]
+				}
+			}
+		],
+		"variables": [],
+		"order": [
+			"ab580d90-fb6d-48ce-b3a4-fd6d3fc17f2b",
+			"4fee4279-051a-4fd8-a81a-b9eda805fa23",
+			"eddfa970-e5d2-450e-bb30-851b10b6f66d",
+			"b72d826d-6249-424a-99f2-8d7c1b7f51fd",
+			"7eaf958d-caeb-48d4-9062-1e2d60b1a2ce",
+			"6ae6adbd-7044-4a77-b2fa-2ccda29af44d",
+			"d500dad6-8d4a-4cf3-be99-22a0e212e78e"
+		],
+		"folders_order": [],
+		"owner": "7313586",
+		"favorite": false,
+		"isFavorite": true,
+		"type": "collection",
+		"depth": 0
+	},
+	"folder": null,
+	"environment": null,
+	"globals": [],
+	"results": [
+		{
+			"name": "Index Route",
+			"id": "ab580d90-fb6d-48ce-b3a4-fd6d3fc17f2b",
+			"url": "http://localhost:3000/",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"It should have message property": true,
+				"It should have status property": true,
+				"It should have data property": true,
+				"Status code is 200": true,
+				"It should have correct status property": true,
+				"It should have correct message property": true,
+				"It should have correct name": true,
+				"It should have correct github": true,
+				"It should have correct email": true,
+				"It should have correct mobile": true,
+				"It should have correct twitter": true
+			},
+			"testPassFailCounts": {
+				"It should have message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have data property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct github": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct email": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct mobile": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct twitter": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"40"
+			],
+			"allTests": [
+				{
+					"It should have message property": true,
+					"It should have status property": true,
+					"It should have data property": true,
+					"Status code is 200": true,
+					"It should have correct status property": true,
+					"It should have correct message property": true,
+					"It should have correct name": true,
+					"It should have correct github": true,
+					"It should have correct email": true,
+					"It should have correct mobile": true,
+					"It should have correct twitter": true
+				}
+			],
+			"time": "40",
+			"totalRequestTime": "40",
+			"iterationResults": {}
+		},
+		{
+			"name": "Successful Validation 1",
+			"id": "4fee4279-051a-4fd8-a81a-b9eda805fa23",
+			"url": "http://localhost:3000/validate-rule",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"tests": {
+				"It should have message property": true,
+				"It should have status property": true,
+				"It should have data property": true,
+				"Status code is 200": true,
+				"It should have correct status property": true,
+				"It should have correct message property": true,
+				"It should have validation property": true,
+				"It should have error property": true,
+				"It should have correct field property": true,
+				"It should have correct field_value property": true,
+				"It should have correct condition property": true,
+				"It should have correct condition_value property": true
+			},
+			"testPassFailCounts": {
+				"It should have message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have data property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have validation property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have error property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct field property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct field_value property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct condition property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct condition_value property": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"25"
+			],
+			"allTests": [
+				{
+					"It should have message property": true,
+					"It should have status property": true,
+					"It should have data property": true,
+					"Status code is 200": true,
+					"It should have correct status property": true,
+					"It should have correct message property": true,
+					"It should have validation property": true,
+					"It should have error property": true,
+					"It should have correct field property": true,
+					"It should have correct field_value property": true,
+					"It should have correct condition property": true,
+					"It should have correct condition_value property": true
+				}
+			],
+			"time": "25",
+			"totalRequestTime": "25",
+			"iterationResults": {}
+		},
+		{
+			"name": "Failed Validation 1",
+			"id": "eddfa970-e5d2-450e-bb30-851b10b6f66d",
+			"url": "http://localhost:3000/validate-rule",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"It should have message property": true,
+				"It should have status property": true,
+				"It should have data property": true,
+				"Status code is 400": true,
+				"It should have correct status property": true,
+				"It should have correct message property": true,
+				"It should have validation property": true,
+				"It should have error property": true,
+				"It should have correct field property": true,
+				"It should have correct field_value property": true,
+				"It should have correct condition property": true,
+				"It should have correct condition_value property": true
+			},
+			"testPassFailCounts": {
+				"It should have message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have data property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have validation property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have error property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct field property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct field_value property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct condition property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct condition_value property": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"55"
+			],
+			"allTests": [
+				{
+					"It should have message property": true,
+					"It should have status property": true,
+					"It should have data property": true,
+					"Status code is 400": true,
+					"It should have correct status property": true,
+					"It should have correct message property": true,
+					"It should have validation property": true,
+					"It should have error property": true,
+					"It should have correct field property": true,
+					"It should have correct field_value property": true,
+					"It should have correct condition property": true,
+					"It should have correct condition_value property": true
+				}
+			],
+			"time": "55",
+			"totalRequestTime": "55",
+			"iterationResults": {}
+		},
+		{
+			"name": "Missing Data Field Error",
+			"id": "b72d826d-6249-424a-99f2-8d7c1b7f51fd",
+			"url": "http://localhost:3000/validate-rule",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"It should have message property": true,
+				"It should have status property": true,
+				"It should have data property": true,
+				"Status code is 400": true,
+				"It should have correct status property": true,
+				"It should have correct message property": true,
+				"It should have null data value": true
+			},
+			"testPassFailCounts": {
+				"It should have message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have data property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have null data value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"118"
+			],
+			"allTests": [
+				{
+					"It should have message property": true,
+					"It should have status property": true,
+					"It should have data property": true,
+					"Status code is 400": true,
+					"It should have correct status property": true,
+					"It should have correct message property": true,
+					"It should have null data value": true
+				}
+			],
+			"time": "118",
+			"totalRequestTime": "118",
+			"iterationResults": {}
+		},
+		{
+			"name": "Missing Required Payload Field",
+			"id": "7eaf958d-caeb-48d4-9062-1e2d60b1a2ce",
+			"url": "http://localhost:3000/validate-rule",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"It should have message property": true,
+				"It should have status property": true,
+				"It should have data property": true,
+				"Status code is 400": true,
+				"It should have correct status property": true,
+				"It should have correct message property": true,
+				"It should have null data value": true
+			},
+			"testPassFailCounts": {
+				"It should have message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have data property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have null data value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"185"
+			],
+			"allTests": [
+				{
+					"It should have message property": true,
+					"It should have status property": true,
+					"It should have data property": true,
+					"Status code is 400": true,
+					"It should have correct status property": true,
+					"It should have correct message property": true,
+					"It should have null data value": true
+				}
+			],
+			"time": "185",
+			"totalRequestTime": "185",
+			"iterationResults": {}
+		},
+		{
+			"name": "Invalid JSON error",
+			"id": "6ae6adbd-7044-4a77-b2fa-2ccda29af44d",
+			"url": "http://localhost:3000/validate-rule",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"It should have message property": true,
+				"It should have status property": true,
+				"It should have data property": true,
+				"Status code is 400": true,
+				"It should have correct status property": true,
+				"It should have correct message property": true,
+				"It should have null data value": true
+			},
+			"testPassFailCounts": {
+				"It should have message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have data property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have null data value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"458"
+			],
+			"allTests": [
+				{
+					"It should have message property": true,
+					"It should have status property": true,
+					"It should have data property": true,
+					"Status code is 400": true,
+					"It should have correct status property": true,
+					"It should have correct message property": true,
+					"It should have null data value": true
+				}
+			],
+			"time": "458",
+			"totalRequestTime": "458",
+			"iterationResults": {}
+		},
+		{
+			"name": "Wrong Field Type Error",
+			"id": "d500dad6-8d4a-4cf3-be99-22a0e212e78e",
+			"url": "http://localhost:3000/validate-rule",
+			"totalTime": 0,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"tests": {
+				"It should have message property": true,
+				"It should have status property": true,
+				"It should have data property": true,
+				"Status code is 400": true,
+				"It should have correct status property": true,
+				"It should have correct message property": true,
+				"It should have null data value": true
+			},
+			"testPassFailCounts": {
+				"It should have message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have data property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have null data value": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				"71"
+			],
+			"allTests": [
+				{
+					"It should have message property": true,
+					"It should have status property": true,
+					"It should have data property": true,
+					"Status code is 400": true,
+					"It should have correct status property": true,
+					"It should have correct message property": true,
+					"It should have null data value": true
+				}
+			],
+			"time": "71",
+			"totalRequestTime": "71",
+			"iterationResults": {}
+		}
+	],
+	"totalPass": 64,
+	"totalFail": 0,
+	"totalTime": 952,
+	"lifecycle": "done",
+	"requests": [
+		{
+			"name": "Index Route",
+			"id": "ab580d90-fb6d-48ce-b3a4-fd6d3fc17f2b",
+			"url": "http://localhost:3000/",
+			"time": "2021-01-30T17:35:54.029Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"It should have message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have data property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct github": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct email": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct mobile": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct twitter": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Successful Validation 1",
+			"id": "4fee4279-051a-4fd8-a81a-b9eda805fa23",
+			"url": "http://localhost:3000/validate-rule",
+			"time": "2021-01-30T17:35:54.029Z",
+			"responseCode": {
+				"code": 200,
+				"name": "OK",
+				"detail": {
+					"name": "OK",
+					"detail": "Standard response for successful HTTP requests. The actual response will depend on the request method used. In a GET request, the response will contain an entity corresponding to the requested resource. In a POST request the response will contain an entity describing or containing the result of the action."
+				}
+			},
+			"testPassFailCounts": {
+				"It should have message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have data property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have validation property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have error property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct field property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct field_value property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct condition property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct condition_value property": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Failed Validation 1",
+			"id": "eddfa970-e5d2-450e-bb30-851b10b6f66d",
+			"url": "http://localhost:3000/validate-rule",
+			"time": "2021-01-30T17:35:54.029Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"It should have message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have data property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have validation property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have error property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct field property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct field_value property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct condition property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct condition_value property": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Missing Data Field Error",
+			"id": "b72d826d-6249-424a-99f2-8d7c1b7f51fd",
+			"url": "http://localhost:3000/validate-rule",
+			"time": "2021-01-30T17:35:54.029Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"It should have message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have data property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have null data value": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Missing Required Payload Field",
+			"id": "7eaf958d-caeb-48d4-9062-1e2d60b1a2ce",
+			"url": "http://localhost:3000/validate-rule",
+			"time": "2021-01-30T17:35:54.029Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"It should have message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have data property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have null data value": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Invalid JSON error",
+			"id": "6ae6adbd-7044-4a77-b2fa-2ccda29af44d",
+			"url": "http://localhost:3000/validate-rule",
+			"time": "2021-01-30T17:35:54.029Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"It should have message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have data property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have null data value": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		},
+		{
+			"name": "Wrong Field Type Error",
+			"id": "d500dad6-8d4a-4cf3-be99-22a0e212e78e",
+			"url": "http://localhost:3000/validate-rule",
+			"time": "2021-01-30T17:35:54.029Z",
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request",
+				"detail": {
+					"name": "Bad Request",
+					"detail": "The request cannot be fulfilled due to bad syntax."
+				}
+			},
+			"testPassFailCounts": {
+				"It should have message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have data property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Status code is 400": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct status property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have correct message property": {
+					"pass": 1,
+					"fail": 0
+				},
+				"It should have null data value": {
+					"pass": 1,
+					"fail": 0
+				}
+			}
+		}
+	],
+	"synced": false
+}
