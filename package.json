@@ -5,9 +5,10 @@
   "main": "src/server.ts",
   "scripts": {
     "build": "tsc",
-    "heroku-postbuild": "npm run build",
+    "heroku-postbuild": "npm run copyfiles && npm run build",
     "dev": "set NODE_ENV=dev&nodemon",
     "start": "set NODE_ENV=production&nodemon",
+    "copyfiles": "copyfiles -u 1 ./src/**/*.html ./build",
     "inspect": "nodemon --inspect src/server.ts",
     "lint": "npm run lint:js ",
     "lint:eslint": "eslint --ignore-path .gitignore --ext .ts",
@@ -53,7 +54,7 @@
     "typescript": "^4.0.3"
   },
   "bugs": {
-    "url": "https://github.com/LeanKhan/node-rules-validation/issues"
+    "url": "https://github.com/LeanKhan/rule-validation/issues"
   },
-  "homepage": "https://github.com/LeanKhan/node-rules-validation#readme"
+  "homepage": "https://github.com/LeanKhan/rule-validation#readme"
 }
