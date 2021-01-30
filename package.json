@@ -8,7 +8,7 @@
     "heroku-postbuild": "npm run copyfiles && npm run build",
     "dev": "set NODE_ENV=dev&nodemon",
     "start": "set NODE_ENV=production&nodemon",
-    "copyfiles": "copyfiles -u 1 ./src/**/*.html ./build",
+    "copyfiles": "copyfiles -u 1 src/**/*.html ./build",
     "inspect": "nodemon --inspect src/server.ts",
     "lint": "npm run lint:js ",
     "lint:eslint": "eslint --ignore-path .gitignore --ext .ts",
