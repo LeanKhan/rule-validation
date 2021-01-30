@@ -7,7 +7,6 @@
     "build": "tsc",
     "heroku-postbuild": "npm run copyfiles && npm run build",
     "dev": "set NODE_ENV=dev&nodemon",
-    "start": "set NODE_ENV=production&nodemon",
     "copyfiles": "copyfiles -u 1 src/**/*.html build",
     "inspect": "nodemon --inspect src/server.ts",
     "lint": "npm run lint:js ",
@@ -32,6 +31,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "celebrate": "^13.0.4",
+    "copyfiles": "^2.4.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mustache": "^4.1.0",
